@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css"></link>
+        <link rel="stylesheet" type="text/css" href="css/site.css"></link>
+    </head>
+    <body ng-app="EifoAta" ng-controller="ApplicationController">
+        <div class="navbar navbar-default">
+            <div class="navbar-header">
+                <a class="btn navbar-btn navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="glyphicon glyphicon-bar"></span>
+                    <span class="glyphicon glyphicon-bar"></span>
+                    <span class="glyphicon glyphicon-bar"></span>
+                    <span class="glyphicon glyphicon-bar"></span>
+                    <span class="glyphicon glyphicon-bar"></span>
+                    <span class="glyphicon glyphicon-bar"></span>
+                </a>
+                <div id="logo" style="padding-left:10px">
+                    <a href="/">Eifo Ata?</a>
+                </div>
+            </div>
+            <div>
+                <ul class="nav navbar-nav navbar-right navbar-collapse collapse top-2">
+                    <li><a>{{::currentUser.userName}}</a></li>
+                    <li><a ng-if="currentUser" ng-click="openChat()">Messages <span class="new-messages" ng-show="newMessagesCount">{{newMessagesCount}}</span></a></li>
+                    <li><a href="#/map" ng-if="currentUser">Map</a></li>
+                    <li><a href="#/login" ng-if="!currentUser">Login</a></li>
+                    <li><a href="#/users" ng-if="isAuthorized(userRoles.admin)">Users</a></li>
+                    <li><a href="#/signup" ng-if="!currentUser">Sign up</a></li>
+                    <li><a href="#/weather" ng-if="currentUser">Weather</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="viewPartial" ng-view></div>
+                
+        <!--<script src="/socket.io/socket.io.js"></script>-->
+        <script src="https://cdn.socket.io/socket.io-1.0.6.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgaxynZjLFqhnjGqpJZlO5RK0vbYg2gxs" type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.19/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular-route.js"></script>
+        <script src="js/ui-bootstrap-tpls-0.11.0.js" type="text/javascript"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
+        <script src="js/app.js" type="text/javascript"></script>
+        <script src="js/constants/constants.js" type="text/javascript"></script>
+        <script src="js/services/APIService.js" type="text/javascript"></script>
+        <script src="js/services/AuthService.js" type="text/javascript"></script>
+        <script src="js/services/SessionService.js" type="text/javascript"></script>
+        <script src="js/services/SocketsService.js" type="text/javascript"></script>
+        <script src="js/controllers/ApplicaionController.js" type="text/javascript"></script>
+        <script src="js/controllers/LoginController.js" type="text/javascript"></script>
+        <script src="js/controllers/SignupController.js" type="text/javascript"></script>
+        <script src="js/controllers/MapController.js" type="text/javascript"></script>
+        <script src="js/controllers/UsersController.js" type="text/javascript"></script>
+        <script src="js/controllers/UserController.js" type="text/javascript"></script>
+        <script src="js/controllers/ChatController.js" type="text/javascript"></script>
+        <script src="js/controllers/WeatherController.js" type="text/javascript"></script>
+    </body>
+</html>
