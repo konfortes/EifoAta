@@ -1,8 +1,7 @@
 (function(data) {
    var seedData = require("./seedData");
    var database = require("./database");
-
-
+   var hasher = require("../auth/hasher");
 
    data.createUser = function(user, next) {
       database.getDb(function(err, db) {
@@ -93,7 +92,6 @@
    };
 
 
-
    function seedDatabase() {
       database.getDb(function(err, db) {
          if (err) {
@@ -109,6 +107,10 @@
                   if (count === 0) {
                      console.log("Seeding users to the Database...");
                      seedData.users.forEach(function(item) {
+                        var salt = hasher.createSalt();
+                        item.passwordHashed = hasher.computeHash(item.password, salt);
+                        item.salt = salt;
+                        delete item.password;
                         db.users.insert(item, function(err) {
                            if (err) {
                               console.log("Failed to insert user into database");

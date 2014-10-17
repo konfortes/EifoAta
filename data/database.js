@@ -1,6 +1,6 @@
 (function(database) {
     var mongodb = require("mongodb");
-    var mongoUrl  = "";
+    var mongoUrl  = "mongodb://konfortes:konfortes123@kahana.mongohq.com:10021/konfortes";
     var theDb = null;
     database.getDb = function(next) {
         if (!theDb) {
