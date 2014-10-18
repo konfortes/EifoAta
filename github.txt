@@ -1,5 +1,8 @@
-git status to watch current files status
 git remote add [remote name] [remote url]  ---> figure out what it is
+git status to watch current files status
+git pull
 git add [file1, file2, ...] or git add -A to add all files
 git commit -m 'message' to commit changes
 git push to sync with the repository
+
+git stash (shelve)
