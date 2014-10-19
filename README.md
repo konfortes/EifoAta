@@ -1,12 +1,10 @@
 EifoAta
 =======
 1. MongoDB connection need to be configured in data/database.js 
-   mongodb was installed on mongoHQ. the connection string : mongodb://<user>:<password>@kahana.mongohq.com:10021/konfortes.
+   mongodb was installed on mongoHQ(Compose). the connection string : mongodb://user:password@kahana.mongohq.com:10021/konfortes.
    
-
 2. To run with nodemon: nodemon server.js
 
-3. In cloud9 hosting, the app can be accessed by URL that is emitted to the Output tab of the console
+3. In cloud9 hosting, the app can be accessed by URL that is emitted to the Output tab of the console.
 
-
-in case of Error: listen EADDRINUSE run kill $(ps ax | grep '[j]s' | awk '{ print $1 }')
+in case of Error: listen EADDRINUSE run kill $(ps ax | grep '[j]s' | awk '{ print $1 }').
