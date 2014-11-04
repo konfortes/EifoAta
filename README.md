@@ -1,5 +1,8 @@
 EifoAta
 =======
+A location based app enabling to share location with other connected users and watch data layers on map.
+
+instructions:
 1. MongoDB connection need to be configured in data/database.js 
    mongodb was installed on mongoHQ(Compose). the connection string : mongodb://user:password@kahana.mongohq.com:10021/konfortes.
    
